@@ -4,7 +4,7 @@ using NaychiDotNetCore.ConsoleApp.DapperExamples;
 using System.Data;
 using System.Data.SqlClient;
 
-Console.WriteLine("Hello,World");
+Console.WriteLine("Hello,NCC");
 
 //Ctrl + . => suggestion
 //F9 => break point
