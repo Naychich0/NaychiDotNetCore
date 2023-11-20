@@ -37,12 +37,12 @@ namespace NaychiDotNetCore.ConsoleApp.DapperExamples
             public void Run()
 
             {
-                Read();
-               //Create("Test1", "NCC", "Hello");
-                Edit(6);
-                Edit(30);
-               //Update(5, "Test8.5", "Test8.5", "Test.7");
-               //Delete(3);
+               Read();
+               Create("Test101", "Nay", "Hi");
+               Edit(6);
+               Edit(30);
+               Update(5, "Test6.5", "Test6.5", "Test.7");
+               Delete(3);
             }
             private void Read()
             {
@@ -92,45 +92,33 @@ namespace NaychiDotNetCore.ConsoleApp.DapperExamples
                 Console.WriteLine(item.Blog_Author);
                 Console.WriteLine(item.Blog_Content);
             
-
-
-
-
             #endregion
 
         }
 
             private void Create(string title, string author, string content)
-            {
-                #region Create
+        {
+            #region Create
 
-                SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
-                connection.Open();
-                //         String query = $@"INSERT INTO [dbo].[Tbl_Blog]
-                //      ([Blog_Title]
-                //        ,[Blog_Author]
-                //        ,[Blog_Content])
-                //  VALUES
-                //        ('{title}'
-                //      ,'{author}'
-                //      ,'{content}')";
+            BlogDataModel blog = new BlogDataModel { 
 
-                String query = @"INSERT INTO [dbo].[Tbl_Blog]
-           ([Blog_Title]
-           ,[Blog_Author]
-           ,[Blog_Content])
-     VALUES
-           (@Blog_Title
-           ,@Blog_Author
-           ,@Blog_Content)";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                //  int result = cmd.ExecuteNonQuery();
-                cmd.Parameters.AddWithValue("@Blog_Title", title);
-                cmd.Parameters.AddWithValue("@Blog_Author", author);
-                cmd.Parameters.AddWithValue("@Blog_Content", content);
+                Blog_Title = title,
+                Blog_Author = author,
+                Blog_Content = content
+            };
 
-                int result = cmd.ExecuteNonQuery();
-                connection.Close();
+            String query = $@"INSERT INTO [dbo].[Tbl_Blog]
+                  ([Blog_Title]
+                   ,[Blog_Author]
+                    ,[Blog_Content])
+             VALUES
+                  (@Blog_Title
+                  ,@Blog_Author
+                  ,@Blog_Content)";
+
+            using IDbConnection db = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
+        
+                int result = db.Execute(query,blog);
 
                 String message = result > 0 ? "Saving Successful." : "Saving Failed.";
                 Console.WriteLine(message);
@@ -139,34 +127,25 @@ namespace NaychiDotNetCore.ConsoleApp.DapperExamples
 
             private void Update(int id, string title, string author, string content)
             {
-                #region Update
+            #region Update
 
-                SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
-                connection.Open();
-                //         String query = $@"INSERT INTO [dbo].[Tbl_Blog]
-                //      ([Blog_Title]
-                //        ,[Blog_Author]
-                //        ,[Blog_Content])
-                //  VALUES
-                //        ('{title}'
-                //      ,'{author}'
-                //      ,'{content}')";
+            BlogDataModel blog = new BlogDataModel
+            {
+                Blog_Id = id,
+                Blog_Title = title,
+                Blog_Author = author,
+                Blog_Content = content
+            };
 
-                String query = @"UPDATE [dbo].[Tbl_Blog]
-   SET [Blog_Title] = @Blog_Title
-      ,[Blog_Author] =@Blog_Author
-      ,[Blog_Content] = @Blog_Content
- WHERE Blog_Id =@Blog_Id;";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                //  int result = cmd.ExecuteNonQuery();
-                cmd.Parameters.AddWithValue("@Blog_Id", id);
-                cmd.Parameters.AddWithValue("@Blog_Title", title);
-                cmd.Parameters.AddWithValue("@Blog_Author", author);
-                cmd.Parameters.AddWithValue("@Blog_Content", content);
+            String query = @"UPDATE [dbo].[Tbl_Blog]
+            SET [Blog_Title] = @Blog_Title
+                ,[Blog_Author] =@Blog_Author
+                ,[Blog_Content] = @Blog_Content
+                WHERE Blog_Id =@Blog_Id;";
 
-                int result = cmd.ExecuteNonQuery();
-                connection.Close();
+            using IDbConnection db = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
 
+                int result = db.Execute(query,blog);   
                 String message = result > 0 ? "Updating Successful." : "Updating Failed.";
                 Console.WriteLine(message);
                 #endregion
@@ -174,28 +153,18 @@ namespace NaychiDotNetCore.ConsoleApp.DapperExamples
 
             private void Delete(int id)
             {
-                #region Delete
+            #region Delete
 
-                SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
-                connection.Open();
-                //         String query = $@"INSERT INTO [dbo].[Tbl_Blog]
-                //      ([Blog_Title]
-                //        ,[Blog_Author]
-                //        ,[Blog_Content])
-                //  VALUES
-                //        ('{title}'
-                //      ,'{author}'
-                //      ,'{content}')";
-
-                String query = @"DELETE FROM [dbo].[Tbl_Blog]
+            BlogDataModel blog = new BlogDataModel
+            {
+                Blog_Id = id
+            };
+            String query = @"DELETE FROM [dbo].[Tbl_Blog]
                         WHERE Blog_Id =@Blog_Id;";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                //  int result = cmd.ExecuteNonQuery();
-                cmd.Parameters.AddWithValue("@Blog_Id", id);
 
+            using IDbConnection db = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
 
-                int result = cmd.ExecuteNonQuery();
-                connection.Close();
+                int result = db.Execute(query,blog);
 
                 String message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
                 Console.WriteLine(message);
