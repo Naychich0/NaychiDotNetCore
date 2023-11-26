@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NaychiDotNetCore.MvcApp.Models;
 
 namespace NaychiDotNetCore.MvcApp.Controllers
 {
@@ -7,7 +8,9 @@ namespace NaychiDotNetCore.MvcApp.Controllers
         [ActionName("Index")]
         public IActionResult BlogIndex()
         {
-            return View("BlogIndex");
+            AppDbContext db = new AppDbContext();
+            List<BlogDataModel> lst = db.Blogs.ToList();
+            return View("BlogIndex",lst);
         }
     }
 }
