@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace NaychiDotNetCore.ConsoleApp.EFCoreExamples
-{
+{      
     public class EFCoreExample
     {
         private readonly AppDbContext _dbContext;
