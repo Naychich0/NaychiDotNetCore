@@ -200,11 +200,11 @@ namespace NaychiDotNetCore.RestApi.Controllers
 
             conditions = conditions.Substring(0, conditions.Length - 2);
 
-            query = $@"UPDATE [dbo].[Tbl_Blog]
+            String queryUpdate= $@"UPDATE [dbo].[Tbl_Blog]
                     SET {conditions}
                     WHERE Blog_Id = @Blog_Id";
 
-            cmd2.CommandText = query;
+            cmd2.CommandText = queryUpdate;
             cmd2.Connection = connection;
             cmd2.Parameters.AddWithValue("@Blog_Id", id);
             int result = cmd2.ExecuteNonQuery();
