@@ -168,9 +168,7 @@ namespace NaychiDotNetCore.RestApi.Controllers
             }
 
             string conditions = "";
-            //SqlConnection connection2 = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
-
             SqlCommand cmd2 = new SqlCommand();
 
             if (!string.IsNullOrEmpty(blog.Blog_Title))
