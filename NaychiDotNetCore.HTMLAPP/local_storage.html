@@ -44,9 +44,9 @@
     <script src="./js/custom.js"></script>
 
     <script>
-      var _userId = null; //declare global variable
+      var _userId = null;
 
-      readUser(); // Call Read
+      readUser(); 
 
       function getUser() {
         var users = localStorage.getItem("tbl_user");
@@ -76,7 +76,6 @@
 
         users.push(user);
         localStorage.setItem("tbl_user", JSON.stringify(users));
-        // successMessage("Saving Successful");
         notiMessage();
         clear();
         readUser();
@@ -101,7 +100,6 @@
         users = JSON.parse(users);
         let htmlString = "";
         $.each(users, function (index, value) {
-          // jQuery Looping(forEach)
           console.log(index + ": " + value.UserName);
           htmlString += `
             <tr>
@@ -140,7 +138,6 @@
         _userId = user.UserId;
       }
 
-      // cancel btn
       $("#btnCancel").click(function () {
         $("#txtUserName").val("");
         _userId = null;
