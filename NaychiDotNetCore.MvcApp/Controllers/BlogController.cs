@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NaychiDotNetCore.MvcApp.Models;
 
-namespace NaychiDotNetCore.MvcApp.Controllers
+namespace AEHKLMNSTZDotNetCore.MvcApp.Controllers
 {
     public class BlogController : Controller
     {
