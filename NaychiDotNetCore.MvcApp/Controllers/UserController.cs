@@ -2,12 +2,12 @@
 
 namespace AEHKLMNSTZDotNetCore.MvcApp.Controllers
 {
-    public class BlogController : Controller
+    public class UserController : Controller
     {
         [ActionName("Index")]
-        public IActionResult BlogIndex()
+        public IActionResult UserIndex()
         {
-            return View("BlogIndex");
+            return View("UserIndex");
         }
     }
 }

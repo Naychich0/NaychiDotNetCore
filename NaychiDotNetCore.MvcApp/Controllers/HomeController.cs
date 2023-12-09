@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NaychiDotNetCore.MvcApp.Models;
+﻿using AEHKLMNSTZDotNetCore.MvcApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace NaychiDotNetCore.MvcApp.Controllers
+namespace AEHKLMNSTZDotNetCore.MvcApp.Controllers
 {
     public class HomeController : Controller
     {
