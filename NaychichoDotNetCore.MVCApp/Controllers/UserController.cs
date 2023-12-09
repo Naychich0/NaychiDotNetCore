@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace NaychiDotNetCore.MvcApp.Controllers
+namespace NaychichoDotNetCore.MVCApp.Controllers
 {
-    public class BlogController : Controller
+    public class UserController : Controller
     {
         [ActionName("Index")]
-        public IActionResult BlogIndex()
+        public IActionResult Index()
         {
             return View("BlogIndex");
         }
