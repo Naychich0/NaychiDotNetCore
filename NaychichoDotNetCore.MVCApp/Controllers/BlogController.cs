@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NaychichoDotNetCore.MVCApp.Models;
 using NaychichoDotNetCore.MVCApp.EFDbContext;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace NaychichoDotNetCore.MVCApp.Controllers
 {
@@ -39,6 +41,21 @@ namespace NaychichoDotNetCore.MVCApp.Controllers
 
             //return View("BlogCreate");
             return Redirect("/blog");
+        }
+
+        [ActionName("Edit")]
+        public async Task<IActionResult> BlogEdit(int id)
+        {
+            if(await _context.Blogs.AsNoTracking().AnyAsync(x => x.Blog_Id == id)
+            {
+                string message = "No data found.";
+                TempData["Message"] = message;
+                TempData["IsSuccess"] = false;
+                return Redirect("/blog");
+               
+            }
+            var blog = await _context.Blogs.AsNoTracking().FirstOrDefaultAsync(x => x.Blog_Id == id);
+            return View("BlogEdit", blog);
         }
     }
 }
