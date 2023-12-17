@@ -43,10 +43,20 @@
         @foreach(var item in Model)
         {
             <tr>
+                
                 <th scope="row">@(++count)</th>
                 <td>@item.Blog_Title</td>
                 <td>@item.Blog_Author</td>
                 <td>@item.Blog_Content</td>
+                <td>
+                    <a class="btn btn-warning" href="/blog/edit/@item.Blog_Id">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a class="btn btn-danger" href="/blog/delete/@item.Blog_Id">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </td>
+                
             </tr>
         }    
     </tbody>
