@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.MinimalApi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.RestApi", "NaychiDotNetCore.RestApi\NaychiDotNetCore.RestApi.csproj", "{EC6000C5-C7D8-4104-99B2-DE719E79C849}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaychichoDotNetCore.MVCApp", "NaychichoDotNetCore.MVCApp\NaychichoDotNetCore.MVCApp.csproj", "{436F8418-EEE6-4120-8780-6A6200354E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.MVCApp", "NaychichoDotNetCore.MVCApp\NaychiDotNetCore.MVCApp.csproj", "{436F8418-EEE6-4120-8780-6A6200354E21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

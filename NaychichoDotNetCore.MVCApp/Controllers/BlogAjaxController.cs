@@ -32,7 +32,7 @@ namespace NaychichoDotNetCore.MVCApp.Controllers
                 pageCount++;
 
                 model.Blogs = lst;
-                model.PageSetting = new PageSettingModel(pageNo, pageSize, pageCount, "/blog/list");
+                model.PageSetting = new PageSettingModel(pageNo, pageSize, pageCount, "/blogAjax/list");
 
             }
             return View("BlogList", model);
@@ -77,27 +77,37 @@ namespace NaychichoDotNetCore.MVCApp.Controllers
         [ActionName("Update")]
         public async Task<IActionResult> BlogUpdate(int id, BlogDataModel reqModel)
         {
-            var blog = await _context.Blogs.AsNoTracking().FirstOrDefaultAsync(x => x.Blog_Id == id);
-
-            if (blog != null)
+            if (!await _context.Blogs.AsNoTracking().AnyAsync(x => x.Blog_Id == id))
             {
-                blog.Blog_Title = reqModel.Blog_Title;
-                blog.Blog_Author = reqModel.Blog_Author;
-                blog.Blog_Content = reqModel.Blog_Content;
-
-                _context.Blogs.Update(blog);
-                var result = await _context.SaveChangesAsync();
-
-                string message = result > 0 ? "Update Successful." : "Update Failed.";
-                TempData["Message"] = message;
-                TempData["IsSuccess"] = result > 0;
-
-                MessageModel model = new MessageModel(result > 0, message);
-                return Json(model);
+                TempData["Message"] = "No data found.";
+                TempData["IsSuccess"] = false;
+                return Redirect("/blogAjax/list");
             }
 
-            return Json(new MessageModel(false, "No Data Found to Update"));
+            var blog = await _context.Blogs.FirstOrDefaultAsync(x => x.Blog_Id == id);
+            if (blog is null)
+            {
+                TempData["Message"] = "No data found.";
+                TempData["IsSuccess"] = false;
+                return Redirect("/blogAjax/list");
+            }
+
+            blog.Blog_Title = reqModel.Blog_Title;
+            blog.Blog_Author = reqModel.Blog_Author;
+            blog.Blog_Content = reqModel.Blog_Content;
+
+            int result = _context.SaveChanges();
+
+            string message = result > 0 ? "Updating Successful." : "Updating Failed.";
+            TempData["Message"] = message;
+            TempData["IsSuccess"] = result > 0;
+
+            MessageModel model = new MessageModel(result > 0, message);
+
+            return Json(model);
         }
+
+
 
         [HttpPost]
         [ActionName("Delete")]
