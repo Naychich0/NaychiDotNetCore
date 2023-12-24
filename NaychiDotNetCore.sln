@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.MinimalApi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.RestApi", "NaychiDotNetCore.RestApi\NaychiDotNetCore.RestApi.csproj", "{EC6000C5-C7D8-4104-99B2-DE719E79C849}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaychiDotNetCore.MvcApp", "NaychiDotNetCore.MvcApp\NaychiDotNetCore.MvcApp.csproj", "{53A918D5-370F-48E4-BF1F-4FC092FD0F99}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{EC6000C5-C7D8-4104-99B2-DE719E79C849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC6000C5-C7D8-4104-99B2-DE719E79C849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC6000C5-C7D8-4104-99B2-DE719E79C849}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53A918D5-370F-48E4-BF1F-4FC092FD0F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53A918D5-370F-48E4-BF1F-4FC092FD0F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53A918D5-370F-48E4-BF1F-4FC092FD0F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53A918D5-370F-48E4-BF1F-4FC092FD0F99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
