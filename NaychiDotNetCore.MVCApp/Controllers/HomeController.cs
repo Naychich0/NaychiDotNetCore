@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NaychichoDotNetCore.MVCApp.Models;
+using NaychiDotNetCore.MvcApp.Models;
 using System.Diagnostics;
 
-namespace NaychichoDotNetCore.MVCApp.Controllers
+namespace NaychiDotNetCore.MvcApp.Controllers
 {
     public class HomeController : Controller
     {

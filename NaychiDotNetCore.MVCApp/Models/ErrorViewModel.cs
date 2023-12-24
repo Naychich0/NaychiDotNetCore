@@ -1,4 +1,4 @@
-namespace NaychichoDotNetCore.MVCApp.Models
+namespace NaychiDotNetCore.MvcApp.Models
 {
     public class ErrorViewModel
     {
