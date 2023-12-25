@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.MinimalApi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.RestApi", "NaychiDotNetCore.RestApi\NaychiDotNetCore.RestApi.csproj", "{EC6000C5-C7D8-4104-99B2-DE719E79C849}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.MvcApp", "NaychiDotNetCore.MvcApp\NaychiDotNetCore.MvcApp.csproj", "{4F46CCFB-0895-4EA4-BCED-4BCDD5A70B00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.MvcApp", "NaychiDotNetCore.MvcApp\NaychiDotNetCore.MvcApp.csproj", "{8714D91F-CFCE-42CA-8696-19DCF37C9C26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{EC6000C5-C7D8-4104-99B2-DE719E79C849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC6000C5-C7D8-4104-99B2-DE719E79C849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC6000C5-C7D8-4104-99B2-DE719E79C849}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F46CCFB-0895-4EA4-BCED-4BCDD5A70B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F46CCFB-0895-4EA4-BCED-4BCDD5A70B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F46CCFB-0895-4EA4-BCED-4BCDD5A70B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F46CCFB-0895-4EA4-BCED-4BCDD5A70B00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8714D91F-CFCE-42CA-8696-19DCF37C9C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8714D91F-CFCE-42CA-8696-19DCF37C9C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8714D91F-CFCE-42CA-8696-19DCF37C9C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8714D91F-CFCE-42CA-8696-19DCF37C9C26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
