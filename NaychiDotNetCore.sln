@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.RestApi", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaychiDotNetCore.MvcApp", "NaychiDotNetCore.MvcApp\NaychiDotNetCore.MvcApp.csproj", "{8714D91F-CFCE-42CA-8696-19DCF37C9C26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaychiDotNetCore.ThemeMvcApp", "NaychiDotNetCore.ThemeMvcApp\NaychiDotNetCore.ThemeMvcApp.csproj", "{EC30DFEC-CDAB-4E6B-89C4-9048E19094DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8714D91F-CFCE-42CA-8696-19DCF37C9C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8714D91F-CFCE-42CA-8696-19DCF37C9C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8714D91F-CFCE-42CA-8696-19DCF37C9C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC30DFEC-CDAB-4E6B-89C4-9048E19094DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC30DFEC-CDAB-4E6B-89C4-9048E19094DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC30DFEC-CDAB-4E6B-89C4-9048E19094DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC30DFEC-CDAB-4E6B-89C4-9048E19094DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
